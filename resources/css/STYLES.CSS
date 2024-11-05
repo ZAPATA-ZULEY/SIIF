@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #000000, #00ffcc);
+}
+
+.app-container {
+    background-color: #000000;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: white;
+    border: 2px solid #00ffcc;
+}
+
+.app-container h1, .app-container h2 {
+    margin-bottom: 5px;
+}
+
+.app-container p {
+    margin-bottom: 20px;
+}
+
+.app-container input, .app-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: #666666;
+    color: white;
+}
+
+.app-container button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #00ffcc;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.app-container a {
+    color: #00ffcc;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.receipt-details, .balance-details {
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #00ffcc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #444444;
+}

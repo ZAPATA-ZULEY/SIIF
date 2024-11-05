@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANCAPP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-screen" class="app-container">
+        <h1>BANCAPP</h1>
+        <h2>Login</h2>
+        <p>Iniciar sesión para continuar.</p>
+        <label for="usuario">USUARIO</label>
+        <input type="text" id="usuario" placeholder="Ingrese su nombre">
+        <label for="contrasena">CONTRASEÑA</label>
+        <input type="password" id="contrasena" placeholder="••••••••">
+        <button onclick="login()">Iniciar sesión</button>
+        <a href="#">OLVIDÓ SU NOMBRE DE USUARIO?</a>
+        <a href="#">OLVIDÓ LA CONTRASEÑA?</a>
+    </div>
+
+    <div id="main-screen" class="app-container" style="display: none;">
+        <h1>BANCAPP</h1>
+        <h2 id="welcome-message">BIENVENIDO</h2>
+        <p>Transacciones principales</p>
+        <div class="button-grid">
+            <button onclick="showTransfer()">TRANSFERENCIAS</button>
+            <button onclick="showBalances()">ESTADO DE CUENTA DEL CLIENTE</button>
+            <button onclick="showWithdrawals()">RETIROS</button>
+            <button onclick="showStatement()">EXTRACTO</button>
+            <button onclick="showSettings()">CONFIGURACIÓN</button>
+            <button onclick="logout()">SALIR</button>
+        </div>
+    </div>
+
+    <div id="customer-service-screen" class="app-container" style="display: none;">
+        <h1>Atención al Cliente</h1>
+        <p>Para mayor información puedes comunicarte a la línea +57 3114406245</p>
+        <button onclick="goBack()">Volver</button>
+    </div>
+ 
+    <div id="settings-screen" class="app-container" style="display: none;">
+        <h1>Configuración</h1>
+        <button onclick="showCustomerService()">Atención al Cliente</button>
+        <button onclick="goBack()">Volver</button>
+    </div>
+    </div>
+    <div id="transfer-screen" class="app-container" style="display: none;">
+        <h1>TRANSFERENCIAS</h1>
+        <p id="saldo-disponible">Saldo disponible: \$2,000,000</p>
+        <label for="tipo-cuenta">Seleccione tipo de cuenta</label>
+        <select id="tipo-cuenta">
+            <option>Ahorros</option>
+            <option>Corriente</option>
+            <option>Tarjetas de Crédito</option>
+            <option>Préstamos</option>
+        </select>
+        <label for="numero-cuenta">Escriba el número de la cuenta</label>
+        <input type="text" id="numero-cuenta" placeholder="Ingrese el número">
+        <label for="monto">¿Cuánto dinero quiere transferir?</label>
+        <input type="text" id="monto" placeholder="Ingrese el valor">
+        <label for="motivo">Motivo (Opcional)</label>
+        <input type="text" id="motivo" placeholder="Ingrese el motivo de la transacción">
+        <button onclick="showReceipt()">Continuar</button>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+    <div id="withdrawal-screen" class="app-container" style="display: none;">
+        <h1>RETIROS</h1>
+        <p id="saldo-disponible-retiro">Saldo disponible: \$2,000,000</p>
+        <label for="monto-retiro">¿Cuánto dinero quiere retirar?</label>
+        <input type="text" id="monto-retiro" placeholder="Ingrese el valor">
+        <button onclick="processWithdrawal()">Retirar</button>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+    <div id="receipt-screen" class="app-container" style="display: none;">
+        <h1>TRANSFERENCIA EXITOSA</h1>
+        <p>Comprobante N° 883467438</p>
+        <p>10 agosto 2024</p>
+        <div class="receipt-details">
+            <p id="producto-origen"></p>
+            <p>Producto final: Nequi</p>
+            <p id="valor-enviado"></p>
+        </div>
+        <button onclick="shareReceipt()">Compartir</button>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+    <div id="balances-screen" class="app-container" style="display: none;">
+        <h1>Saldos y Movimientos</h1>
+        <div class="balance-details">
+            <div>
+                <h3>Cuentas</h3>
+                <p id="cuenta-ahorro">Cuenta de Ahorro: \$2,000,000</p>
+            </div>
+            <div>
+                <h3>Tarjetas de Crédito</h3>
+                <p id="tarjeta-credito">Tarjeta de crédito: \$2,000,000</p>
+            </div>
+            <div>
+                <h3>Créditos</h3>
+                <p id="prestamos">Préstamos: \$2,000,000</p>
+            </div>
+        </div>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+    <div id="statement-screen" class="app-container" style="display: none;">
+        <h1>Extracto de la Cuenta</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Concepto</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody id="movements-table">
+                <!-- Movimientos se agregarán aquí -->
+            </tbody>
+        </table>
+        <button onclick="goBack()">Volver</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
